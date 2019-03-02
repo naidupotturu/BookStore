@@ -1,0 +1,30 @@
+<div class="ui raised segment">
+  <h1 class="ui header"><%= params[:query] %> (<%= @books.count %> results)</h1>
+  <div class="ui divider"></div>
+  <div class="ui divided link items">
+    <% @books.each do |book| %>
+      <a class="item" href="<%= book_path(book) %>">
+        <div class="small image">
+          <img src="<%= book_image(book) %>">
+        </div>
+        <div class="content">
+          <div class="header"><%= book.name %></div>
+          <div class="meta">
+            <span><%= book.author %></span>
+          </div>
+          <div class="description">
+            <p><%= truncate book.description, length: 250, seperator: /\w+/ %></p>
+          </div>
+          <div class="extra">
+            <div class="ui right floated primary button">
+              View More
+              <i class="right chevron icon"></i>
+            </div>
+            <div class="ui label"><i class="green arrow alternate circle down outline icon"></i> <%= number_to_human book.downloads %> Downloads</div>
+            <div class="ui label"><i class="yellow star icon"></i> <%= book.rating %> Rating</div>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<h1 class="header"><%= name %></h1>
+<div class="ui divider"></div>
+<div class="ui link cards book-cards">
+  <% book_list.each do |book| %>
+    <a class="card" href="<%= book_path(book) %>">
+      <div class="image">
+        <img src="<%= book_image(book) %>">
+      </div>
+      <div class="content">
+        <div class="header"><%= book.name %></div>
+        <div class="meta"><%= book.author %></div>
+        <div class="description"><%= truncate book.description, length: 100, seperator: /\w+/ %></div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+          <i class="star icon"></i> <%= book.rating %>
+        </span>
+        <span>
+          <i class="arrow alternate circle down outline icon"></i> <%= number_to_human book.downloads %>
+        </span>
+      </div>
+    </a>
+  <% end %>
+</div>
