@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+(1..75).each do |i|
+  Book.create({
+    name: Faker::Book.title,
+    version: Faker::App.version,
+    author: Faker::Book.author,
+    release_date: Faker::Date.between(5.years.ago, Date.today),
+    description: Faker::Lorem.paragraph(5, false, 20),
+    downloads: Faker::Number.between(1,10000000),
+    rated_times: Faker::Number.between(1,10000),
+    rating: Faker::Number.between(1,5)
+  })
+  puts "Book #{i} Is Created:"
+end
