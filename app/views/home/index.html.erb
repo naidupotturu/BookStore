@@ -2,13 +2,6 @@
   <img class="ui centered medium image" src="/logo.png" >
   <h2 align="center" style="margin-top: 0;padding-top:0">Welcome To Book Store</h2>
 </div>
-<div class="ui raised segment no padding">
-  <form method="GET" action="search">
-    <div class="ui fluid icon transparent large input">
-      <input name="query" type="text" placeholder="Search books...">
-    <i class="search icon"></i>
-    </div>
-  </form>
-</div>
+<%= react_component("Search") %>
 <%= render partial: "books/book_cards", locals: { name: "Most Downloaded Books", book_list: @most_downloaded } %>
 <%= render partial: "books/book_cards", locals: { name: "Highest Rated Books", book_list: @highest_rated } %>
