@@ -15,7 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'faker', '~> 1.8.7'
 # Semantic UI Css library
 gem 'semantic-ui-sass'
-
+gem 'jquery-rails'
 gem "react_on_rails"
 gem "webpacker"
 gem 'mini_racer', platforms: :ruby
